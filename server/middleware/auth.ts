@@ -1,7 +1,7 @@
 import passport from 'passport';
 import { Strategy as LocalStrategy } from 'passport-local';
 import bcrypt from 'bcrypt';
-import db from '../db/index';
+import db from '../db/index.js';
 
 export const setupPassport = () => {
     passport.use(

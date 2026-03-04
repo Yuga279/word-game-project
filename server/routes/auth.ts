@@ -1,7 +1,7 @@
 import express from 'express';
 import bcrypt from 'bcrypt';
 import passport from 'passport';
-import db from '../db/index';
+import db from '../db/index.js';
 
 const router = express.Router();
 

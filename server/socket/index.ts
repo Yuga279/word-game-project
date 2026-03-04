@@ -1,5 +1,5 @@
 import { Server } from 'socket.io';
-import db from '../db/index';
+import db from '../db/index.js';
 import _ from 'lodash';
 
 export const setupSocket = (io: Server) => {

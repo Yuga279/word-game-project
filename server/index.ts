@@ -7,11 +7,11 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import pgSession from 'connect-pg-simple';
 import pg from 'pg';
-import db from './db/index';
-import { setupPassport } from './middleware/auth';
-import authRoutes from './routes/auth';
-import gameRoutes from './routes/game';
-import { setupSocket } from './socket/index';
+import db from './db/index.js';
+import { setupPassport } from './middleware/auth.js';
+import authRoutes from './routes/auth.js';
+import gameRoutes from './routes/game.js';
+import { setupSocket } from './socket/index.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
