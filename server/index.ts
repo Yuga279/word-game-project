@@ -80,8 +80,12 @@ if (process.env.NODE_ENV === 'production') {
     // __dirname is dist/server/server/
     const staticPath = path.resolve(__dirname, '../../../dist');
     app.use(express.static(staticPath));
-    app.get('/:path*', (req, res) => {
-        res.sendFile(path.join(staticPath, 'index.html'));
+    app.use((req, res, next) => {
+        if (req.method === 'GET' && !req.path.startsWith('/api')) {
+            res.sendFile(path.join(staticPath, 'index.html'));
+        } else {
+            next();
+        }
     });
 }
 
