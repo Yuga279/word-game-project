@@ -111,8 +111,9 @@ export const setupSocket = (io: Server) => {
                     let mostVotedId = null;
                     let maxVotes = 0;
                     for (const [targetId, vList] of Object.entries(talliedVotes)) {
-                        if (vList.length > maxVotes) {
-                            maxVotes = vList.length;
+                        const voters = vList as any[];
+                        if (voters.length > maxVotes) {
+                            maxVotes = voters.length;
                             mostVotedId = targetId;
                         }
                     }
